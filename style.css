@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding:0;
+
+}
+body {
+    background-color: bisque;
+    text-align: center;
+}
+#heading{
+    font-size: 10vmin;
+    font-family: cursive;
+}
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+.box{
+    height: 18vmin ;
+    width:18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.4);
+    font-size: 8vmin;
+    font-style: oblique;
+    background-color: azure;
+}
+#reset_btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: coral;
+    border: none;
+    border-radius: 1rem;
+}
+#new-btn{
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    background-color: coral;
+    border: none;
+    border-radius: 1rem;
+    display: block;
+    cursor: pointer;
+}
+#msg{
+    color: darkblue;
+    display: block;
+}
+.msg-container {
+  margin-top: 10vmin;
+  font-size: 5vmin;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* space between message and button */
+ 
+  text-align: center;
+}
+
+.hide{
+    display: none;
+}
+
+.box {
+  position: relative;
+   /* hide default text */
+}
+
+.box::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8vmin;
+  color: black; /* fallback color */
+}
+
+.box[data-value="X"]::before {
+  color: red;
+}
+
+.box[data-value="O"]::before {
+  color: blue;
+}
