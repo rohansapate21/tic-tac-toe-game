@@ -58,7 +58,9 @@ const disableBoxes =() => {
 }
 
 const showWinner=(winner) => {
-    msg.innerText = `Congratulations Winner is ${winner}`;
+    let winnerName = winner === "X" ? document.getElementById("playerX").value || "Player X" 
+                                    : document.getElementById("playerO").value || "Player O";
+    msg.innerText = `Congratulations, ${winnerName} wins!`;
     msgContainer.classList.remove("hide");
     disableBoxes();
 };
@@ -78,6 +80,15 @@ const checkWinner=() => {
             } 
         };
     };
+    let filled = 0;
+    boxes.forEach(box => {
+        if (box.innerText !== "") filled++;
+    });
+    if (filled === 9) {
+        msg.innerText = "Match Draw!";
+        msgContainer.classList.remove("hide");
+    }
+
 };
 newGameBtn.addEventListener("click",resetGame);
 reset_btn.addEventListener("click",resetGame);

@@ -93,3 +93,34 @@ body {
 .box[data-value="O"]::before {
   color: blue;
 }
+
+.player-inputs {
+    margin: 2vmin 0;
+    display: flex;
+    justify-content: center;
+    gap: 2vmin;
+}
+
+.player-inputs input {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #888;
+    width: 200px;
+    text-align: center;
+    font-family: cursive;
+    background-color: #fefefe;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: border-color 0.3s;
+}
+
+.player-inputs input:focus {
+    border-color: coral;
+    outline: none;
+}
+#playerX{
+    color: red;
+}
+#playerO{
+    color: blue;
+}
